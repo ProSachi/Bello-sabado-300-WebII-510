@@ -1,14 +1,28 @@
-import './App.css'
-import Hola from './components/Hola'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Layout } from './components/Layout';
+import { VistaInicio } from './views/VistaInicio';
+import { VistaEstudiantes } from './views/VistaEstudiantes';
 
-function App() {
+const dbEstudiantes = [
+  { id: 1, nombre: "Ana Gómez", grado: "10A" },
+  { id: 2, nombre: "Carlos Ruiz", grado: "11B" }
+];
 
-
+export default function App() {
   return (
-    <>
-  ´<Hola />
-    </>
-  )
+    <BrowserRouter>
+      {/* El Layout envuelve a TODAS las rutas. Todo lo que está dentro es el 'children' */}
+      <Layout>
+        <Routes>
+          <Route path="/" element={<VistaInicio />} />
+          
+          {/* Pasamos datos estáticos por Props a la vista */}
+          <Route 
+            path="/estudiantes" 
+            element={<VistaEstudiantes listaDatos={dbEstudiantes} />} 
+          />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
+  );
 }
-
-export default App

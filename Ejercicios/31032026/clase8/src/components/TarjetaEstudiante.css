@@ -1,0 +1,27 @@
+
+.tarjeta-estudiante {
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-left: 5px solid #3182ce; /* Detalle visual en el borde izquierdo */
+  transition: transform 0.2s;
+}
+
+.tarjeta-estudiante:hover {
+  transform: translateX(5px); /* Pequeña animación al pasar el mouse */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.tarjeta-estudiante h3 {
+  margin: 0 0 10px 0;
+  color: #2b6cb0;
+}
+
+.tarjeta-estudiante p {
+  margin: 0;
+  color: #4a5568;
+  font-weight: bold;
+}

@@ -1,0 +1,52 @@
+.contenedor-principal {
+  /* Usamos Flexbox en columna para apilar Header -> Main -> Footer */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ocupa el 100% del alto de la ventana del navegador */
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.cabecera {
+  background-color: #1a365d; /* Azul oscuro corporativo/escolar */
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.cabecera h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Estilos para el menú de navegación dentro de la cabecera */
+.cabecera nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.cabecera nav a:hover {
+  color: #63b3ed; /* Azul claro al pasar el mouse */
+}
+
+.area-de-trabajo {
+  /* flex: 1 obliga a este contenedor a expandirse y ocupar todo el espacio sobrante, 
+     empujando el footer hacia abajo */
+  flex: 1; 
+  padding: 40px;
+  background-color: #f7fafc; /* Gris muy claro para el fondo */
+}
+
+.pie-pagina {
+  background-color: #2d3748; /* Gris oscuro */
+  color: #a0aec0;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.875rem;
+}
