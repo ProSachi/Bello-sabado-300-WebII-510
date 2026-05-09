@@ -4,18 +4,23 @@ export function DirectorioPersonajes() {
     const [personajes, setPersonajes] = useState([]);
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState(null);
+    
 
     useEffect(() => {
         const obtenerPersonajes = async () => {
             // Configuramos los parámetros técnicos (Simulación de licenciamiento/reglas)
+
             try {
                 // Ejecutamos la petición asíncrona
-                const respuesta = await fetch('https://rickandmortyapi.com/api/character');
+                const respuesta = await fetch('https://jsonplaceholder.typicode.com/todos');
                 if (!respuesta.ok) {
                     throw new Error(`Fallo de integración. Código: ${respuesta.status}`);
                 }
                 const data = await respuesta.json();
+                console.log(data)
                 setPersonajes(data.results);
+                console.log(data)
+                
             } catch (err) {
                 setError(err.message); // Guardamos el error para mostrarlo
             } finally {
@@ -55,11 +60,11 @@ export function DirectorioPersonajes() {
 
                 {personajes.map((personaje) => (
                     <div key={personaje.id} style={{ border: '1px solid #ccc', borderRadius: '10px', overflow: 'hidden', width: '200px' }}>
-                        <img src={personaje.image} alt={personaje.name} style={{ width: '100%' }} />
+                        <img src={personaje.title} alt={personaje.title} style={{ width: '100%' }} />
                         <div style={{ padding: '10px' }}>
-                            <h3 style={{ margin: '0 0 5px 0', fontSize: '1.1rem' }}>{personaje.name}</h3>
-                            <p style={{ margin: 0, color: personaje.status === 'Alive' ? 'green' : 'red' }}>
-                                {personaje.status}
+                            <h3 style={{ margin: '0 0 5px 0', fontSize: '1.1rem' }}>{personaje.completed}</h3>
+                            <p style={{ margin: 0, color: personaje.completed === 'Alive' ? 'green' : 'red' }}>
+                                {personaje.completed}
                             </p>
                         </div>
                     </div>
