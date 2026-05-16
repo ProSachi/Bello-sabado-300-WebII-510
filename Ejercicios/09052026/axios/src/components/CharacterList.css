@@ -1,0 +1,131 @@
+.character-list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.character-list-container h1 {
+  text-align: center;
+  color: #00b0c8;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 50px;
+}
+
+.error {
+  color: #ff4444;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  background-color: #00b0c8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #0090a8;
+}
+
+.pagination button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-weight: bold;
+  color: #333;
+}
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.character-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.character-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.character-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.character-info {
+  padding: 15px;
+}
+
+.character-info h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.character-info p {
+  margin: 8px 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.status {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.status.alive {
+  background-color: #55cc44;
+  color: white;
+}
+
+.status.dead {
+  background-color: #d63d2e;
+  color: white;
+}
+
+.status.unknown {
+  background-color: #9e9e9e;
+  color: white;
+}
+
+.location,
+.origin {
+  font-size: 0.9rem;
+}
+
+.location strong,
+.origin strong {
+  color: #333;
+}

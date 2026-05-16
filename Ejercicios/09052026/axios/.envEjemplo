@@ -1,0 +1,2 @@
+VITE_API_URL = https://urlejemplo.com/api
+VITE_CONTRA_LOGIN = contraseñaServicioLocal
